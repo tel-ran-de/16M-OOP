@@ -11,12 +11,33 @@ public class BubbleSort {
         System.out.println(Arrays.toString(myLovelyArray));
         bSort(myLovelyArray);
         System.out.println(Arrays.toString(myLovelyArray));
+
+        System.out.println("Копия изначального массива");
+        System.out.println(Arrays.toString(myCopyFromLovelyArray));
+
+        bubbleSortRecursion(myCopyFromLovelyArray);
+        System.out.println(Arrays.toString(myCopyFromLovelyArray));
     }
 
-    private static int[] copyMyArray(int[] myLovelyArray) {
+    private static void bubbleSortRecursion(int[] input) {
+        int count = 0;
+        for (int i = 0; i < input.length - 1; i++) {
+            if (input[i] > input[i + 1]) {
+                swap(input, i);
+                count++;
+            }
+        }
+        if (count > 0) {
+            bubbleSortRecursion(input);
+        }
+    }
 
-
-
+    private static int[] copyMyArray(int[] input) {
+        int output[] = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+            output[i] = input[i];
+        }
+        return output;
     }
 
     private static void bSort(int[] input) {
