@@ -6,7 +6,7 @@ import de.telran.data.Student;
  * 16M-OOP
  * 11 11 : 49
  */
-public class StartMyLovelyApplication {
+public class StartMyLovelyApplicationOld {
     public static void main(String[] args) {
         Student vasyaPupkin = new Student();
         Student sergej = new Student();
@@ -24,7 +24,7 @@ public class StartMyLovelyApplication {
 
         Student[] groupTUBerlin = new Student[]{vasyaPupkin, sergej, varvara, afdofia};
         /*System.out.println(group[3].age);*/
-
+        // 2
 
         studentsPrint(groupTUBerlin);
     }

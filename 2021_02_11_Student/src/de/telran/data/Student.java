@@ -6,7 +6,7 @@ public class Student {
     public int age;
     public double middleRating;
 
-    static int count;
+    static int count = 2021001;
     public int studentID;
 
     public Student() {
@@ -20,5 +20,14 @@ public class Student {
         this.age = age;
         studentID = count;
         count++;
+    }
+
+    public String toDisplay() {
+        return "Экземпляр класса Студент {" + "\n" +
+                "Имя: " + firstName + "\n" +
+                "Фамилия: " + lastName + "\n" +
+                "Возраст: " + age + "\n" +
+                "Средний бал: " + middleRating + "\n" +
+                "Иматрикуляционный номер: " + studentID + " }";
     }
 }
