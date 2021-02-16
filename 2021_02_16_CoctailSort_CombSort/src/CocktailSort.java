@@ -11,7 +11,7 @@ public class CocktailSort {
         myPrint(array);
     }
 
-    private static void cocktailSort(int[] array) {
+    public static void cocktailSort(int[] array) {
         int start = 0;
         int end = array.length - 1;
         while (start <= end) {
@@ -26,7 +26,6 @@ public class CocktailSort {
             }
             // уменьшаем диапазон работы цикла на единицу.
             // End -> Конечный индекс рассматриваемого диапазона.
-
             end--;
             for (int i = end; i > start; i--) {
                 if (array[i] < array[i - 1]) {
@@ -36,7 +35,6 @@ public class CocktailSort {
                     swap = true;
                 }
             }
-
             start++;
             if (!swap) {
                 break;
@@ -44,21 +42,19 @@ public class CocktailSort {
         }
     }
 
-
-    private static void myPrint(int[] array) {
+    public static void myPrint(int[] array) {
         System.out.print("[ ");
         for (int i = 0; i < array.length - 1; i++) {
             System.out.print(array[i] + ", ");
         }
-        System.out.println(array.length - 1 + " ]");
+        System.out.println(array[array.length - 1] + " ]");
     }
 
-    private static int[] createArray(int size) {
+    public static int[] createArray(int size) {
         int[] output = new int[size];
         for (int i = 0; i < output.length; i++) {
             output[i] = (int) (Math.random() * 100);
         }
         return output;
     }
-
 }
