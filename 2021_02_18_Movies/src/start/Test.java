@@ -1,3 +1,7 @@
+package start;
+
+import my_pattern_with_data.Movie;
+
 /**
  * 16M-OOP
  * 19 10 : 31
@@ -23,6 +27,13 @@ public class Test {
         );
 
         Movie[] netflix = new Movie[]{movie1, movie2};
+
         Movie.movieArrayGenreToDisplay(netflix, "детский");
+        Movie[] amazonPrime = new Movie[0];
+        my_pattern_with_data.Movie.movieArrayGenreToDisplay(amazonPrime, "ужас");
+
+        /*
+        img + anons + awtor
+         */
     }
 }
