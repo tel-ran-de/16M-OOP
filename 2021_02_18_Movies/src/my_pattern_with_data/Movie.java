@@ -1,3 +1,4 @@
+package my_pattern_with_data;
 
 public class Movie {
     private String title;
@@ -153,12 +154,9 @@ public class Movie {
         }
     }
 
-    public static void movieArrayGenreToDisplay(
-            Movie[] films,
-            String lovelyGenre
-    ) {
+    public static void movieArrayGenreToDisplay(Movie[] films, String userGenre) {
         for (int i = 0; i < films.length; i++) {
-            if (films[i].genre.equals(lovelyGenre)) {
+            if (films[i].genre.equals(userGenre)) {
                 System.out.println(films[i].toDisplay());
             }
         }
