@@ -1,3 +1,5 @@
+package inheritance;
+
 public class Student extends Person {
     private double rating;
 

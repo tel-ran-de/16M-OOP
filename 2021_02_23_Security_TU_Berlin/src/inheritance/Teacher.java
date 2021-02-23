@@ -1,3 +1,5 @@
+package inheritance;
+
 public class Teacher extends Person {
 
     private double salary; // в долларах
@@ -25,7 +27,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" +
+        return "inheritance.Teacher{" +
                 "salary=" + salary +
                 '}'
                 + super.toString();

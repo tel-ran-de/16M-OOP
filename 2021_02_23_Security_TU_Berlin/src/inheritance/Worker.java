@@ -1,3 +1,5 @@
+package inheritance;
+
 public class Worker extends Person {
     public Worker(String firstName, String secondName, String uniID) {
         super(firstName, secondName, uniID);

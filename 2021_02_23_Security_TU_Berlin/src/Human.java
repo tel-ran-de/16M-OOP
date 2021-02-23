@@ -4,3 +4,4 @@ public final class Human {
     }
 }
 
+// каунтить стринг
