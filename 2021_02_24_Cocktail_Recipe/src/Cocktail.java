@@ -1,6 +1,6 @@
-import java.util.Arrays;
 
 public class Cocktail {
+    //  Immutable - неизменяемый
     private String title;
     private Ingredient[] ingredients;
     private int liquid; // в миллилитрах
@@ -17,27 +17,44 @@ public class Cocktail {
         return liquid;
     }
 
-    public void setPerCent() {
-        // итоговые проценты = мл*алкоголь
-        // (100*0 + 100*40) / все милилилитры = итоговая крепость
+    public String getTitle() {
+        return title;
+    }
 
+    private void setPerCent() {
+        // итоговые проценты = мл*алкоголь
+        // (100*0 + 100*40) / все миллилилитры = итоговая крепость
+        int result = 0;
+        for (int i = 0; i < ingredients.length; i++) {
+            result += ingredients[i].getPerCent() * ingredients[i].getLiquid();
+        }
+        perCent = result / getLiquid();
     }
 
     private void setLiquid() {
         int result = 0;
-        for (Ingredient ing : ingredients) {
-            result += ing.getLiquid();
+/*        for (Ingredient отдельныйИнгредиентик : ingredients) {
+            result += отдельныйИнгредиентик.getLiquid();
+        }*/
+        for (int i = 0; i < ingredients.length; i++) {
+            result+= ingredients[i].getLiquid();
         }
+
         liquid = result;
     }
 
     @Override
     public String toString() {
+        String result = "";
+        for (int i = 0; i < ingredients.length; i++) {
+            result += "\n" + ingredients[i].toString();
+        }
+
         return "Cocktail{" +
                 "title='" + title + '\'' +
-                ", ingredients=" + Arrays.toString(ingredients) +
                 ", liquid=" + liquid +
                 ", perCent=" + perCent +
+                " Состоит из следующих ингредиентов: " + result +
                 '}';
     }
 }

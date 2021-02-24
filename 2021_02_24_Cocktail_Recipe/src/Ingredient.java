@@ -14,6 +14,10 @@ public class Ingredient {
         setAlcohol();
     }
 
+    public int getPerCent() {
+        return perCent;
+    }
+
     public int getLiquid() {
         return liquid;
     }
