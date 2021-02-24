@@ -1,19 +1,20 @@
 package inheritance;
 
 public class Teacher extends Person {
-
     private double salary; // в долларах
+    private int workAge;
+
+    public Teacher(String firstName, String secondName, String uniID) {
+        super(firstName, secondName, uniID);
+        setSalary(45000);
+    }
+
 
     public Teacher() {
     }
 
-    public Teacher(String firstName, String secondName, String uniID) {
-        super(firstName, secondName, uniID);
-        setSalary(500_000_000);
-    }
-
     public void setSalary(double salary) {
-        this.salary = salary;
+        this.salary = salary; // умножить коофициент
     }
 
     @Override
@@ -25,15 +26,20 @@ public class Teacher extends Person {
         System.out.println("Если выучил, то можете выучить и вы!");
     }
 
-    @Override
-    public String toString() {
-        return "inheritance.Teacher{" +
-                "salary=" + salary +
-                '}'
-                + super.toString();
+/*    @Override
+    void walks() {
+        super.walks();
+    }*/
+
+    void treats() {
+        System.out.println("Лечиться в санатории после тяжелой работы с учениками");
     }
 
-    public String toDisplay(){
-        return super.toString() + "для ведроидов";
+    @Override
+    public String toString() {
+        return "Учитель " + super.toString() + "\n" +
+                "salary: " + salary;
+
     }
+
 }

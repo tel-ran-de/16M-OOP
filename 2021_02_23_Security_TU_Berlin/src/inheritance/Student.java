@@ -15,7 +15,7 @@ public class Student extends Person {
     public String toString() {
         return "Студент{ " + "\n" +
                 "firstname " + super.getFirstName() + "\n" +
-                "secondaName " + super.getSecondName() + "\n" +
+                "secondName " + super.getSecondName() + "\n" +
                 "uniID " + super.getUniID() + "\n" +
                 "рейтинг " + rating;
     }
