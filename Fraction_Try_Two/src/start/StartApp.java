@@ -13,5 +13,16 @@ public class StartApp {
 
         Fraction frResult = Math.addition(fr1, fr2);
         System.out.println(frResult);
+
+        Fraction frminus = Math.subtraction(fr1, fr2);
+        System.out.println(frminus);
+
+        Fraction testNewMethod = new Fraction(fr1, fr2, '+');
+        System.out.println("----------------------------------");
+
+        Fraction a = new Fraction(5);
+        Fraction b = new Fraction(2,3);
+        a.addAnotherFraction(b);
+        System.out.println(a);
     }
 }
