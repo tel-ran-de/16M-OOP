@@ -7,7 +7,6 @@ public class Duck extends Pet {
     // override - super.methods
     // abstract void sleeps();
 
-
     void moves() {
         this.swims();
     }
@@ -15,6 +14,7 @@ public class Duck extends Pet {
     void swims(){
         System.out.println("Плыви уточка");
     }
+
     @Override
     public String toString() {
         return "Duck{}";
