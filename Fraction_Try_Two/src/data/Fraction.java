@@ -2,7 +2,7 @@ package data;
 
 import dao.Math;
 
-public class Fraction extends Number{
+public class Fraction extends Number {
     private int numerator; // верхняя часть -> числитель
     private int denominator; // нижняя часть -> знаменатель
 
@@ -14,7 +14,7 @@ public class Fraction extends Number{
     }
 
     private void setSortIndex() {
-        this.sortIndex = ((double)numerator)/denominator;
+        this.sortIndex = ((double) numerator) / denominator;
     }
 
     public Fraction(int numerator, int denominator) {
@@ -103,14 +103,29 @@ public class Fraction extends Number{
         return c;
     }*/
 
-    private void reduction(){
-        // сокращение дроби
-        // this.n
-        // this.d
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
     }
-    private int reduction (int n, int d){
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+
+    private void reduction() {
+        int indexReduction = reduction(numerator, this.denominator);
+        setNumerator(numerator / indexReduction);
+        setDenominator(this.denominator / indexReduction);
+    }
+    public void multiplyFraction(Fraction b) {
+        int d = this.denominator * b.getDenominator();
+        int n = this.numerator * b.getNumerator();
+        this.denominator = d / reduction(n, d);
+        this.numerator = n / reduction(n, d);
+    }
+    private int reduction(int n, int d) {
+        int reduction = Math.gcdRecursionAlgorithm(n, d);
         //нод
-        return 1;
+        return reduction;
     }
 
     // cleane code -> один класс -> один метод -> одна строчка
